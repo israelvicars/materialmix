@@ -1,6 +1,9 @@
 Materialmix::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # THIS IS THE LINE THAT MAKES HEROKU NOT EXPLODE
+  config.assets.compile = true
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
