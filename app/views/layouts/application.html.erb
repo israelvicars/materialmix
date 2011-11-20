@@ -2,13 +2,36 @@
 <html>
 <head>
   <title>Materialmix</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "http://twitter.github.com/bootstrap/1.4.0/bootstrap.css", "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="<%= root_path %>">Material Mix</a>
+        <ul class="nav">
+          <li><%= link_to "Materials", materials_path %></li>
+        </ul>
+        <p class="pull-right" style="color:white">
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path %>
+          or
+          <%= link_to "Sign Up", new_user_registration_path %>
+        <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+
+    <% if notice %><div class="alert-message block-message info"><%= notice %></div><% end %>
+    <% if alert %><div class="alert-message block-message error"><%= alert %></div><% end %>
        
     <%= yield %>
 

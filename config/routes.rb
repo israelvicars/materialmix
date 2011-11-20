@@ -1,7 +1,15 @@
 Materialmix::Application.routes.draw do
+  resources :materials do
+    collection do
+      get 'search'
+    end
+  end
+
   devise_for :users
 
   resources :users
+
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
