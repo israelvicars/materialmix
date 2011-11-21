@@ -19,7 +19,7 @@
 </table>
 
 <br />
-
+	
 <%= form_tag search_materials_path, :method => :get do %>
   <%= text_field_tag 'term' %>
   <%= submit_tag "Search" %>
@@ -28,4 +28,4 @@
 <br />
 <br />
 
-<%= link_to 'New Material', new_material_path %>
+<h3><%= link_to 'Create New Material', new_material_path %></h3>
