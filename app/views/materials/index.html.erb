@@ -20,12 +20,12 @@
 
 <br />
 
-<%= link_to 'New Material', new_material_path %>
-
-<br />
-<br />
-
 <%= form_tag search_materials_path, :method => :get do %>
   <%= text_field_tag 'term' %>
   <%= submit_tag "Search" %>
 <% end %>
+
+<br />
+<br />
+
+<%= link_to 'New Material', new_material_path %>
